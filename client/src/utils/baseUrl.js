@@ -1,4 +1,4 @@
 
-const backendUrl = 'http://localhost:7070';
+const backendUrl = 'https://fulllstack-ecommerce.onrender.com';
 
 export default backendUrl;

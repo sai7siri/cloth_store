@@ -26,7 +26,7 @@
    app.use(express.urlencoded( { extended : true }));
    app.use(cookieParser());
    app.use(cors({
-      origin : ['http://localhost:7070'],
+      origin : ['https://fulllstack-ecommerce.onrender.com'],
       methods : ['GET', 'POST' , 'PUT' , 'DELETE'],
       credentials : true
    }));

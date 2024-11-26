@@ -34,8 +34,8 @@ const createOrder = async (req, res) => {
             payment_method : 'paypal'
          },
          redirect_urls : {
-            return_url : "http://localhost:7070/paypal-return",
-            cancel_url : "http://localhost:7070/paypal-cancel"
+            return_url : "https://fulllstack-ecommerce.onrender.com/paypal-return",
+            cancel_url : "https://fulllstack-ecommerce.onrender.com/paypal-cancel"
          },
 
          transactions : [
