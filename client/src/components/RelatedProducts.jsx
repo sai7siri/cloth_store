@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useProductContext } from "../context/product";
 import ImageCards from "./ImageCards";
 
 const RelatedProducts = ({ category, subCategory , client }) => {

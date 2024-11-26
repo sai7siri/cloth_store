@@ -10,6 +10,7 @@ import { fetchData } from "../context/productsSlice";
 import { fetchCart } from "../context/cartSlice";
 import { toast } from "react-toastify";
 import Footer from "./Footer";
+import { FaStar, FaStarHalf } from "react-icons/fa";
 
 const ProuctsView = () => {
   const dispatch = useDispatch();
@@ -97,11 +98,22 @@ const ProuctsView = () => {
           <p className="font-semibold text-lg">{data?.name}</p>
 
           <div className="my-3 flex items-center justify-center sm:justify-start gap-2">
-            <img src={icons.star_icon} alt="staricon" />
-            <img src={icons.star_icon} alt="staricon" />
-            <img src={icons.star_icon} alt="staricon" />
-            <img src={icons.star_icon} alt="staricon" />
-            <img src={icons.star_dull_icon} alt="staricon" />
+            <p>
+              <FaStar size={"26"} />
+            </p>
+            <p>
+              <FaStar size={"26"} />
+            </p>
+            <p>
+              <FaStar size={"26"} />
+            </p>
+            <p>
+              <FaStar size={"26"} />
+            </p>
+            <p>
+              <FaStarHalf size={"26"} />
+            </p>
+
             <p className="font-mono font-semibold text-blue-700">( 177 )</p>
           </div>
 
@@ -127,7 +139,7 @@ const ProuctsView = () => {
             ))}
           </div>
 
-          {accUser &&  accUser.role === "admin" ? null : (
+          {accUser && accUser.role === "admin" ? null : (
             <button
               onClick={() => handleAdd(data._id)}
               className="px-6 py-2 my-2 rounded-sm  bg-black text-white hover:bg-blue-600 transition-all duration-500"

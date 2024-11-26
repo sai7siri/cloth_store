@@ -101,10 +101,10 @@ const Collections = () => {
             <p 
             onClick={()=> setShowFilter(!showFilter)}
             className='cursor-pointer font-mono flex items-center text-2xl  gap-2'>Filters
-              <img src={<FaChevronRight />} alt="" className={`${showFilter ? "rotate-90" : ""} h-3 mt-1' `} />
+              <span className={`md:hidden ${showFilter ? "rotate-90" : ""} h-3 mt-1' `}><FaChevronRight size={"16"}/></span>
             </p>
             {/* category */}
-            <div className={`border border-gray-500 py-2 pl-4 mt-6 ${showFilter ? "" : "hidden"} sm:block`}>
+            <div className={`border border-gray-500 py-2 pl-4 mt-6 ${showFilter ? "" : "hidden"} md:block`}>
             <p className='font-medium text-zinc-700'>Category</p>
               <p className='flex gap-2'>
                 <input type="checkbox" value={"MEN"} 
@@ -125,7 +125,7 @@ const Collections = () => {
               </p>
             </div>
             {/* sub-category */}
-            <div className={`${showFilter ? "" : "hidden"} sm:block border my-4 border-gray-600 py-2 pl-4 `}>
+            <div className={`${showFilter ? "" : "hidden"} md:block border my-4 border-gray-600 py-2 pl-4 `}>
             <p className='font-medium text-zinc-700'>Type</p>
               <p className='flex gap-1'>
                 <input type="checkBox" value="TopWear" onChange={typeFilter} /> Topwear
