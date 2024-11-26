@@ -25,7 +25,7 @@ const Cart = () => {
 
 
   useEffect(() => {
-    if(accUser){
+    if(accUser && cartItems.length > 0 ){
       dispatch(fetchCart());
     }
   }, [dispatch , accUser]);
