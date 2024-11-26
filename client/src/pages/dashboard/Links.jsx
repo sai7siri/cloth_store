@@ -3,9 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import baseUrl from "../../utils/baseUrl";
 import { useProductContext } from "../../context/product";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../../context/cartSlice";
 
 const Links = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const location = useLocation();
   const [activeLinks , setActiveLinks ] = useState('');
   const { setAccUser, accUser } = useProductContext();
@@ -31,6 +34,7 @@ const Links = () => {
       if (data.success) {
         setAccUser(null);
         localStorage.removeItem("user");
+        dispatch(clearCart());
         navigate("/signin");
       }
     } catch (err) {

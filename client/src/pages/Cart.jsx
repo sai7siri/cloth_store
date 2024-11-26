@@ -4,7 +4,7 @@ import { useProductContext } from "../context/product";
 import { TiArrowBackOutline } from "react-icons/ti";
 import { useSelector, useDispatch } from "react-redux";
 import CartDetailCard from "./CartDetailsCard";
-import { fetchCart } from "../context/cartSlice";
+import { clearCart, fetchCart } from "../context/cartSlice";
 import Loading from "../utils/Loading";
 import baseUrl from "../utils/baseUrl";
 import axios from "axios";
@@ -28,6 +28,7 @@ const Cart = () => {
     if(accUser && cartItems.length > 0 ){
       dispatch(fetchCart());
     }
+    dispatch(clearCart());
   }, [dispatch , accUser]);
 
   const handleClearCart = async () => {
