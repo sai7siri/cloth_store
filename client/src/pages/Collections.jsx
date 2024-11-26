@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { FaChevronRight } from "react-icons/fa6";
 import Heading from "../components/Heading"
 import { useProductContext } from '../context/product';
 import ImageCards from "../components/ImageCards";
-import logo from "../assets/frontend_assets/dropdown_icon.png";
 import {useDispatch , useSelector } from "react-redux";
 import Loading from "../utils/Loading";
 import {fetchData} from "../context/productsSlice";
+import { FaChevronRight } from "react-icons/fa6";
 
 const Collections = () => {
 
@@ -102,7 +101,7 @@ const Collections = () => {
             <p 
             onClick={()=> setShowFilter(!showFilter)}
             className='cursor-pointer font-mono flex items-center text-2xl  gap-2'>Filters
-              <img src={logo} alt="" className={`${showFilter ? "rotate-90" : ""} h-3 mt-1' `} />
+              <img src={<FaChevronRight />} alt="" className={`${showFilter ? "rotate-90" : ""} h-3 mt-1' `} />
             </p>
             {/* category */}
             <div className={`border border-gray-500 py-2 pl-4 mt-6 ${showFilter ? "" : "hidden"} sm:block`}>

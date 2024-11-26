@@ -1,26 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
-import { backdrop } from "../utils/backdrops";
+import img1 from "../assets/drop1.jpg";
+import img2 from "../assets/drop2.jpg";
+import img3 from "../assets/drop3.jpg";
+import img4 from "../assets/drop4.jpg";
+import img5 from "../assets/drop5.png";
+
+
+
 
 const Hero = () => {
   const [slide, setSlide] = useState(0);
   const imgRef = useRef();
 
+
+  const backdrop = [img1 ,img2,img3,img4,img5]
+
+
   const nextImg = () => {
-    setSlide((prev) => {
-      if (slide === backdrop.length - 1) {
-        return 0;
-      } else {
-        return prev + 1;
-      }
-    });
+   setSlide( (prev) => (prev === backdrop.length -1 ? 0 : prev + 1 ))
   };
 
   const previousImg = () => {
-    if (slide === 0) {
-      setSlide(backdrop.length - 1);
-    } else {
-      setSlide(slide - 1);
-    }
+   setSlide( (prev)=> ( prev === 0 ? backdrop.length -1 : prev - 1))
   };
 
   useEffect(() => {
@@ -61,7 +62,7 @@ const Hero = () => {
           onMouseLeave={() => (imgRef.current = setTimeout(nextImg, 4000))}
         >
           <img
-            src={backdrop[slide].img}
+            src={backdrop[slide]}
             alt="image"
             className="w-full h-[450px] rounded-md transition-all duration-300 ease-in-out"
           />

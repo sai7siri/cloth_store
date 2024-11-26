@@ -1,8 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { client } from "../assets/frontend_assets/assets";
-import axios from "axios";
-import startpoint from "../utils/baseUrl";
-import { toast } from "react-toastify";
+import { createContext, useContext, useState } from "react";
 
 export const ProductContext = createContext();
 
@@ -31,7 +27,6 @@ const ProductContextProvider = ({ children }) => {
   const [ editProduct , setEditProduct ] = useState(null);
 
   const value = {
-    client,
     search,
     setSearch,
     showBar,

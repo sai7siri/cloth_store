@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../context/product";
-import { icons } from "../assets/frontend_assets/assets";
 import Heading from "./Heading";
 import RelatedProduct from "./RelatedProducts";
 import { useDispatch, useSelector } from "react-redux";
