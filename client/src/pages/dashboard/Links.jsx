@@ -5,6 +5,10 @@ import baseUrl from "../../utils/baseUrl";
 import { useProductContext } from "../../context/product";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../context/cartSlice";
+import { ImProfile } from "react-icons/im";
+import { MdOutlineLocalGroceryStore , MdListAlt } from "react-icons/md";
+import { HiOutlineLogout } from "react-icons/hi";
+import { FaBoxOpen } from "react-icons/fa";
 
 const Links = () => {
   const navigate = useNavigate();
@@ -13,6 +17,7 @@ const Links = () => {
   const [activeLinks , setActiveLinks ] = useState('');
   const { setAccUser, accUser } = useProductContext();
 
+  
 
   useEffect( ()=>{
 
@@ -48,14 +53,19 @@ const Links = () => {
 
 
   return (
-    <div className="flex flex-col items-center justify-center h-full gap-12">
+ 
+    <div className="flex flex-row sm:flex-col items-center justify-evenly sm:justify-center h-full sm:gap-12 py-3">
       {accUser.role === "admin" ? (
         <>
           <Link to="/dashboard/allorders"
           onClick={()=> setActiveLinks('/dashboard/allorders')}
           >
             <div className={`lg:px-16 px-2 py-2 rounded-lg font-serif  ${ activeLinks === '/dashboard/allorders' ? 'bg-sky-600 text-white' : 'hover:bg-sky-600 hover:text-white' }`}>
-              AllOrders
+            <span className="hidden sm:block">
+            AllOrders
+              </span>
+              <MdListAlt size={"26"} className="sm:hidden"/>
+              
             </div>
           </Link>
 
@@ -63,7 +73,11 @@ const Links = () => {
           onClick={()=> setActiveLinks('/dashboard/products')}
           >
             <div className={`lg:px-16  px-2 py-2 rounded-lg font-serif ${ activeLinks === '/dashboard/allproducts' ? 'bg-sky-600 text-white' : 'hover:bg-sky-600 hover:text-white' }`}>
-              AllProducts
+            <span className="hidden sm:block">
+            AllProducts
+              </span>
+              <FaBoxOpen size={"26"} className="sm:hidden"/>
+             
             </div>
           </Link>
         </>
@@ -73,7 +87,10 @@ const Links = () => {
           onClick={()=> setActiveLinks('/dashboard/profile')}
           >
             <div className={`lg:px-16 px-2 py-2 rounded-lg font-serif ${activeLinks === '/dashboard/profile' ? "bg-sky-600 text-white" : "hover:bg-sky-600 hover:text-white"}`}>
-              Profile
+             <span className="hidden sm:block">
+             Profile
+              </span>
+              <ImProfile size={"24"} className="sm:hidden"/>
             </div>
           </Link>
 
@@ -81,17 +98,12 @@ const Links = () => {
           onClick={()=> setActiveLinks('/dashboard/order')}
           >
             <div className={` lg:px-16  px-2 py-2 rounded-lg font-serif ${activeLinks === '/dashboard/order' ? "bg-sky-600 text-white" : "hover:bg-sky-600 hover:text-white"} `}>
-              Orders
+             
+             <span className="hidden sm:block">Orders</span>
+             <MdOutlineLocalGroceryStore size={"26"} className="sm:hidden"/>
             </div>
           </Link>
 
-          {/* <Link to="/dashboard/setting"
-          onClick={()=> setActiveLinks('/dashboard/setting')}
-          >
-            <div className={` lg:px-16  px-2 py-2 rounded-lg font-serif ${activeLinks === '/dashboard/setting' ? "bg-sky-600 text-white" : "hover:bg-sky-600 hover:text-white"} `}>
-              Address
-            </div>
-          </Link> */}
         </>
       )}
 
@@ -99,9 +111,11 @@ const Links = () => {
         onClick={handleLogout}
         className="lg:px-16  px-2 py-2 rounded-lg hover:bg-red-600 hover:text-white cursor-pointer"
       >
-        Logout
+        <span className="hidden sm:block">Logout</span>
+        <HiOutlineLogout size={"26"} className="sm:hidden"/>
       </div>
     </div>
+     
   );
 };
 

@@ -5,7 +5,7 @@ import Loading from '../utils/Loading';
 
 const BestSeller = ( {client}) => {
 
-   const bestSells = client.filter( (item)=> item.bestSeller);
+   const bestSells = client && client.filter( (item)=> item.bestSeller);
 
 
   return (
