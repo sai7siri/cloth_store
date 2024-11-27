@@ -45,8 +45,7 @@ const handleSubmit =(e)=>{
 
       <div className="mb-10 flex flex-col items-center justify-center">
 
-      <p className="font-mono text-2xl">Subscribe now & get 20% off</p>
-      <p className="text-slate-800 font-serif text-sm py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore vero ut quia, officiis odio culpa iste  </p>
+      <p className="text-slate-800 font-serif text-sm py-3">This is a modern, feature-rich e-commerce platform built using the MERN stack (MongoDB, Express.js, React, Node.js). It offers a seamless shopping experience with robust backend functionality and an intuitive frontend design.</p>
       <form onSubmit={handleSubmit} className="max-w-md flex items-center gap-1">
         <input type="email" value={contact || ""}
         onChange={(e)=> setContact(e.target.value)}
