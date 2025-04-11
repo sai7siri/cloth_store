@@ -29,7 +29,7 @@
    app.use(express.urlencoded( { extended : true }));
    app.use(cookieParser());
    app.use(cors({
-      origin : ['http://localhost:5173'],
+      origin : 'https://cloth-store-2o8u.onrender.com',
       methods : ['GET', 'POST' , 'PUT' , 'DELETE'],
       credentials : true
    }));
