@@ -6,7 +6,13 @@ const AddressCard = ({address , handleDelete , handleEdit , setOpenMd , handleSe
   return (
           <div
             className={`w-full p-3 bg-white shadow-lg rounded-l m-2 flex flex-col border-2 ${selectedAddres && selectedAddres._id === address._id ? "border-black" : "border-gray-200"}`}
-            onClick={()=> handleSelectAddress(address)}
+            onClick={()=> {
+              if(selectedAddres && selectedAddres._id === address._id){
+                handleSelectAddress(null)
+              }else{
+                handleSelectAddress(address);
+              }
+            }}
           >
             <h2 className="text-xl font-semibold text-neutral-500">
               {address.name}

@@ -5,6 +5,7 @@ const paypal = require("../middlewares/paypal");
 
 
 
+
 const createOrder = async (req, res) => {
   try {
     const userId = req.user.userId;
@@ -34,8 +35,8 @@ const createOrder = async (req, res) => {
             payment_method : 'paypal'
          },
          redirect_urls : {
-            return_url : "https://fulllstack-ecommerce.onrender.com/paypal-return",
-            cancel_url : "https://fulllstack-ecommerce.onrender.com/paypal-cancel"
+            return_url : "http://localhost:5173/paypal-return",
+            cancel_url : "http://localhost:5173/paypal-cancel"
          },
 
          transactions : [
@@ -60,9 +61,10 @@ const createOrder = async (req, res) => {
          ]
     };
 
+
     paypal.payment.create(create_payment_json , async(err , payment)=>{
       if(err){
-         return res.status(500).json({success : false , message : 'failed to create the order '})
+         return res.status(401).json({success : false , message : 'failed to create the order '})
       }else{
          const newCreateOrder = new orderModel({
             userId : userId,
@@ -89,6 +91,7 @@ const createOrder = async (req, res) => {
     })
 
   } catch (err) {
+   console.log(err);
     res.status(500).json({ success: false, message: "internal error" });
   }
 };

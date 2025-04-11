@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 export default function SignUp() {
 
   const navigate = useNavigate();
+  const {setAccUser} = useProductContext()
 
   const [form, setForm] = useState({
     fullName: "",
@@ -32,9 +33,12 @@ export default function SignUp() {
 
       setLoading(false);
       if(data.success){
-
+        toast.success(data.message);
+        localStorage.setItem( 'user' , JSON.stringify(data.data));
+        setAccUser(data.data);
+        
         setTimeout( ()=>{
-          navigate('/signin');
+          navigate('/')
         } , 2000)
       }
     } catch (err) {

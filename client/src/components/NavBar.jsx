@@ -8,9 +8,10 @@ import { IoIosArrowBack } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { useProductContext } from "../context/product";
 import { useSelector } from "react-redux";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
-  const { setShowBar, locationIcon, setOpenCart, accUser } =
+  const { setShowBar, showBar, setOpenCart, accUser } =
     useProductContext();
 
   const { cartItems } = useSelector((state) => state.cart);
@@ -31,19 +32,19 @@ const NavBar = () => {
 
   return (
     <div
-      className={`py-3 sticky top-0 w-full z-20 bg-white ${
+      className={`py-5 sticky top-0 w-full z-20 bg-white ${
         active && "shadow-xl"
       }`}
     >
       <div className="container flex items-center justify-between">
           <Link to="/">
-        <div className="flex items-center gap-4">
-          <LiaStoreAltSolid size={"24"} color="skyblue" />
-          <p className="font-bold text-lg font-serif">My Store</p>
+        <div className="flex items-center gap-4 px-3">
+          <LiaStoreAltSolid size={"28"} color="skyblue" />
+          <p className="hidden md:block font-bold text-lg font-serif">My Store</p>
         </div>
           </Link>
 
-        <div className="hidden sm:flex items-center gap-4 ">
+        <div className="hidden lg:flex items-center gap-4 ">
           <NavLink to="/" className="flex flex-col items-center">
             <p className="font-mono font-medium">Home</p>
             <hr className="w-2/4 h-[2px] bg-black hidden" />
@@ -62,13 +63,15 @@ const NavBar = () => {
           </NavLink>
         </div>
 
-        <div className="flex items-center gap-6">
-          {locationIcon && (
-            <div onClick={() => setShowBar(true)}>
-              {}
+        <div className="flex items-center gap-6 max-w-md w-full">
+            {/* <Link to={'/collections'}>
+            <div onClick={() => setShowBar(!showBar)}>
               <CiSearch size={"22"} className="cursor-pointer" />
             </div>
-          )}
+            </Link> */}
+
+            <SearchBar />
+          
 
           {
             accUser && accUser.role === "admin" ? null : (
@@ -102,7 +105,7 @@ const NavBar = () => {
             </Link>
           </div>
 
-          <div className="sm:hidden relative cursor-pointer">
+          <div className="lg:hidden relative cursor-pointer">
             <RxHamburgerMenu onClick={() => setVisible(true)} size={"26"} />
           </div>
         </div>

@@ -54,13 +54,13 @@ const Links = () => {
 
   return (
  
-    <div className="flex flex-row sm:flex-col items-center justify-evenly sm:justify-center h-full sm:gap-12 py-3">
+    <div className="flex flex-row sm:flex-col items-center justify-evenly sm:justify-center h-full sm:gap-12 py-3 bg-[#5F99AE]">
       {accUser.role === "admin" ? (
         <>
           <Link to="/dashboard/allorders"
           onClick={()=> setActiveLinks('/dashboard/allorders')}
           >
-            <div className={`lg:px-16 px-2 py-2 rounded-lg font-serif  ${ activeLinks === '/dashboard/allorders' ? 'bg-sky-600 text-white' : 'hover:bg-sky-600 hover:text-white' }`}>
+            <div className={`lg:px-16 px-2 py-2 rounded-lg font-serif text-white ${ activeLinks === '/dashboard/allorders' ? 'bg-black ' : 'hover:bg-sky-600 ' }`}>
             <span className="hidden sm:block">
             AllOrders
               </span>
@@ -72,7 +72,7 @@ const Links = () => {
           <Link to="/dashboard/allproducts"
           onClick={()=> setActiveLinks('/dashboard/products')}
           >
-            <div className={`lg:px-16  px-2 py-2 rounded-lg font-serif ${ activeLinks === '/dashboard/allproducts' ? 'bg-sky-600 text-white' : 'hover:bg-sky-600 hover:text-white' }`}>
+            <div className={`lg:px-16  px-2 py-2 rounded-lg font-serif text-white ${ activeLinks === '/dashboard/allproducts' ? 'bg-black' : 'hover:bg-black ' }`}>
             <span className="hidden sm:block">
             AllProducts
               </span>
@@ -86,7 +86,7 @@ const Links = () => {
           <Link to="/dashboard/profile"
           onClick={()=> setActiveLinks('/dashboard/profile')}
           >
-            <div className={`lg:px-16 px-2 py-2 rounded-lg font-serif ${activeLinks === '/dashboard/profile' ? "bg-sky-600 text-white" : "hover:bg-sky-600 hover:text-white"}`}>
+            <div className={`lg:px-16 px-2 py-2 rounded-lg font-serif text-white ${activeLinks === '/dashboard/profile' ? "bg-black" : "hover:bg-black"}`}>
              <span className="hidden sm:block">
              Profile
               </span>
@@ -97,7 +97,7 @@ const Links = () => {
           <Link to="/dashboard/order"
           onClick={()=> setActiveLinks('/dashboard/order')}
           >
-            <div className={` lg:px-16  px-2 py-2 rounded-lg font-serif ${activeLinks === '/dashboard/order' ? "bg-sky-600 text-white" : "hover:bg-sky-600 hover:text-white"} `}>
+            <div className={` lg:px-16  px-2 py-2 rounded-lg font-serif text-white ${activeLinks === '/dashboard/order' ? "bg-black" : "hover:bg-black"} `}>
              
              <span className="hidden sm:block">Orders</span>
              <MdOutlineLocalGroceryStore size={"26"} className="sm:hidden"/>
@@ -109,7 +109,7 @@ const Links = () => {
 
       <div
         onClick={handleLogout}
-        className="lg:px-16  px-2 py-2 rounded-lg hover:bg-red-600 hover:text-white cursor-pointer"
+        className="lg:px-16  px-2 py-2 rounded-lg hover:bg-red-700 text-white cursor-pointer"
       >
         <span className="hidden sm:block">Logout</span>
         <HiOutlineLogout size={"26"} className="sm:hidden"/>

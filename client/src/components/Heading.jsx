@@ -1,10 +1,10 @@
 import React from "react";
 
-const Heading = ({ text1, text2 }) => {
+const Heading = ({ text1, text2 , color}) => {
   return (
-    <div className="flex flex-col justify-center items-center my-10">
+    <div className={`flex flex-col justify-center items-center my-10 font-medium ${color === "text-white" ? "text-white" : ""}`}>
       <p className="sofadi-one-regular text-3xl font-semibold">
-        {text1}
+        {text1} 
       </p>
       <div className="flex items-center gap-1 ml-14">
         <p className="w-12 h-[2px] bg-black"></p>

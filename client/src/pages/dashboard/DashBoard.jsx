@@ -10,7 +10,7 @@ export default function DashBoard(){
          <Links />
          </div>
 
-         <div className="border w-full sm:w-4/5  h-full overflow-auto">
+         <div className="border w-full sm:w-4/5  h-full overflow-auto bg-[#9FB3DF]">
          <Outlet />
          </div>
 

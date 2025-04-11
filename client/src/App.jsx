@@ -33,15 +33,15 @@ export default function App(){
   const {accUser} = useProductContext();
 
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  const disable = location.pathname === '/' || location.pathname === '/collections' ||  location.pathname === '/about' 
+  // const disable = location.pathname === '/' || location.pathname === '/collections' ||  location.pathname === '/about' 
 
 
   return(
     <>
       <NavBar />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Cart />
       <div className="container">
       <Routes>
@@ -73,7 +73,7 @@ export default function App(){
             <Route path ='/signin' element={ accUser === null ? <SignIn /> : <Navigate to="/" /> } />
 
       </Routes>
-      { disable ? <Footer /> : null }
+    
       <ToastContainer />
       <Toaster />
     </div>

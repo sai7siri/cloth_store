@@ -22,11 +22,14 @@
    // middlewares
    const _dirname = path.resolve();
 
+   // console.log(_dirname);
+
+
    app.use(express.json());
    app.use(express.urlencoded( { extended : true }));
    app.use(cookieParser());
    app.use(cors({
-      origin : ['https://fulllstack-ecommerce.onrender.com'],
+      origin : ['http://localhost:5173'],
       methods : ['GET', 'POST' , 'PUT' , 'DELETE'],
       credentials : true
    }));
@@ -49,7 +52,7 @@
 
 
    // connections 
-   const port = process.env.PORT;
+   const port = process.env.PORT || 3550;
 
    app.listen(port , ()=>{
       console.log(`server is running on port ${port}`)
@@ -58,7 +61,7 @@
 
    mongoose.connect(process.env.MONGO_URI)
    .then( ()=> console.log('DB is connected'))
-   .catch( ()=> console.log('connection error or DB is disconnected'))
+   .catch( (err)=> console.log('connection error or DB is disconnected' , err))
 
    app.get('/' , (_, res)=>{
       res.send('<h1> Ecommerce store </h1>')

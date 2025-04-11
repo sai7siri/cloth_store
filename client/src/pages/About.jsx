@@ -47,22 +47,22 @@ const About = () => {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Team Member 1 */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img src="https://via.placeholder.com/150" alt="Team Member" className="rounded-full mx-auto w-32 h-32 object-cover" />
-            <h4 className="mt-4 text-xl font-semibold">John Doe</h4>
+            <img src="https://thumbs.dreamstime.com/b/d-clipart-product-manager-holding-roadmap-standing-right-side-image-randomly-colored-background-k-cartoon-351037694.jpg" alt="Team Member images" className="rounded-full mx-auto w-32 h-32 object-cover" />
+            <h4 className="mt-4 text-xl font-semibold">Sai Sirimarthi</h4>
             <p className="mt-2 text-gray-600">CEO & Founder</p>
           </div>
 
           {/* Team Member 2 */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img src="https://via.placeholder.com/150" alt="Team Member" className="rounded-full mx-auto w-32 h-32 object-cover" />
-            <h4 className="mt-4 text-xl font-semibold">Jane Smith</h4>
+            <img src="https://www.shutterstock.com/image-illustration/jakarta-indonesia-june-6th-2023-600nw-2313586653.jpg" alt="Team Member" className="rounded-full mx-auto w-32 h-32 object-cover" />
+            <h4 className="mt-4 text-xl font-semibold">Sai Sirimarthi</h4>
             <p className="mt-2 text-gray-600">Marketing Director</p>
           </div>
 
           {/* Team Member 3 */}
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <img src="https://via.placeholder.com/150" alt="Team Member" className="rounded-full mx-auto w-32 h-32 object-cover" />
-            <h4 className="mt-4 text-xl font-semibold">Michael Brown</h4>
+            <img src="https://thumbs.dreamstime.com/b/d-cartoon-ceo-bright-idea-smiling-excited-white-background-copy-space-d-cartoon-ceo-bright-idea-smiling-346895793.jpg" alt="Team Member" className="rounded-full mx-auto w-32 h-32 object-cover" />
+            <h4 className="mt-4 text-xl font-semibold">Sai Sirimarthi</h4>
             <p className="mt-2 text-gray-600">Product Manager</p>
           </div>
         </div>

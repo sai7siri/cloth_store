@@ -26,6 +26,8 @@ const ProductContextProvider = ({ children }) => {
   // edit product data
   const [ editProduct , setEditProduct ] = useState(null);
 
+  // console.log(search);
+
   const value = {
     search,
     setSearch,

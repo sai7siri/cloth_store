@@ -35,9 +35,25 @@ const signUpUser = async (req, res) => {
 
     await newUser.save();
 
+    const token = await jwt.sign({userId : newUser._id} , process.env.JWT_SECRET , {
+      expiresIn : "24h"
+    });
+
+    res.cookie("verify_token", token, {
+      httpOnly: true,
+      secure : process.env.PRODUCTION === "production",
+      sameSite: "strict",
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
+      // unsending password
+
+      newUser.password = undefined;
+
     return res.status(200).json({
       success: true,
       message: "account created success",
+      data : newUser
     });
   } catch (err) {
     res.status(500).json({ message: "internal error" });

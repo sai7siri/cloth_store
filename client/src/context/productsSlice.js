@@ -10,6 +10,8 @@ const fetchData = createAsyncThunk('getAllItems' , async()=>{
          withCredentials : true
       });
       return data.data;
+   
+
    }catch(err){
       throw err;
    }

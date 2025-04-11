@@ -4,6 +4,8 @@ import { IoDownloadOutline } from "react-icons/io5";
 
 const DownloadInvoice = ({ order }) => {
 
+    console.log(order?.paymentStatus);
+
   function formatDate(dateString) {
     const date = new Date(dateString);
     const year = date.getFullYear();

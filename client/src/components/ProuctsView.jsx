@@ -60,7 +60,7 @@ const ProuctsView = () => {
   };
 
   return (
-    <>
+    <div className="bg-[#F2EFE7] p-2">
       <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-start my-7 gap-4 overflow-auto">
         {/* ------imagesection------- */}
         <div
@@ -76,6 +76,7 @@ const ProuctsView = () => {
                 src={item}
                 alt=""
                 className="w-[100px] sm:w-[100%]"
+                loading="lazy"
               />
             ))}
           </div>
@@ -180,9 +181,8 @@ const ProuctsView = () => {
           client={client}
         />
       </div>
-      <Footer />
-    </>
+      {/* <Footer /> */}
+    </div>
   );
 };
-
 export default ProuctsView;

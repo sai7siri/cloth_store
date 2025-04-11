@@ -6,6 +6,8 @@ const ImageCards = ({ data, image }) => {
     alert("Please open the product and select a size to add to cart.");
   };
 
+  console.log(data);
+
   return (
     <div className="relative border border-gray-300 rounded-lg shadow-md overflow-hidden group">
       <Link to={`/productview/${data?._id}`}>
@@ -19,12 +21,8 @@ const ImageCards = ({ data, image }) => {
       <div className="p-4">
         <h3 className="font-bold text-lg truncate">{data?.name}</h3>
         <p className="text-sm text-gray-700">Price: ${data?.price}</p>
-        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-1 hidden group-hover:block">
-          <button
-            onClick={handleAdd}
-            className="w-full text-sm px-2 py-1 rounded-md bg-green-600 text-white hover:bg-green-700 transition">
-            Add to Cart
-          </button>
+        <div className="absolute right-3 top-2 hidden group-hover:block">
+          <p className="px-4 py-1 rounded-lg bg-black text-white font-bold">Stock : <span className={`${data?.stock < 30 ? "text-red-700" : "text-yellow-400"}`}>{data?.stock}</span></p>
         </div>
       </div>
     </div>

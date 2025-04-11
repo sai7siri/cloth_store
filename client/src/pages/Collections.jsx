@@ -19,6 +19,7 @@ const Collections = () => {
     const [ type , setType ] = useState([]);
     const [sortType , setSortType ] = useState("relavent");
 
+    console.log(search);
   
     useEffect( ()=>{
       dispatch(fetchData())
@@ -31,8 +32,6 @@ const Collections = () => {
         setCategory( prev=> prev.filter( item => item !== e.target.value ))
       }else{
         setCategory(prev=> [...prev , e.target.value]);
-
-
       }
     }
 
@@ -47,12 +46,12 @@ const Collections = () => {
       }
     }
     
-    const applyFilter = ()=>{
-      let productsCopy = client.slice();
+    let productsCopy = client.slice();
 
-      if(showBar){
+    const applyFilter = ()=>{
+
         productsCopy = productsCopy.filter( item => item.name.toLowerCase().includes(search) )
-      }
+      
 
       if(category.length > 0){
         productsCopy = productsCopy.filter(item => category.includes(item.category) )
@@ -88,9 +87,11 @@ const Collections = () => {
       sortFilter();
     } , [sortType] )
 
+    // console.log(productsCopy);
+
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-7 my-7'>
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-7 my-7  h-full bg-[#f8daf0] p-1'>
         {/* filters */}
 
         {
