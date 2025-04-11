@@ -1,6 +1,6 @@
 
 
-const backendUrl = 'http://localhost:3550';
+const backendUrl = 'https://cloth-store-2o8u.onrender.com';
 
 export default backendUrl;  
 
